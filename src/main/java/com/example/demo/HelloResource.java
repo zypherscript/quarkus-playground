@@ -20,14 +20,14 @@ public class HelloResource {
   }
 
   @GET
-  @Produces(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.TEXT_PLAIN)
   @Path("/polite/hello/{name}")
   public String hello(@PathParam("name") String name) {
     return helloService.politeHello(name);
   }
 
   @GET
-  @Produces(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.TEXT_PLAIN)
   @Path("/polite/greeting/{name}")
   public String greeting(@PathParam("name") String name) {
     return helloService.politeGreeting(name);
