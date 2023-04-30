@@ -37,4 +37,12 @@ public class HelloResourceTest {
         .body(is("Good morning G"));
   }
 
+  @Test
+  public void testGettingCustomers() {
+    given()
+        .when().get("/hello/customers")
+        .then()
+        .statusCode(200);
+  }
+
 }

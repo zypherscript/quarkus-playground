@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -31,5 +32,12 @@ public class HelloResource {
   @Path("/polite/greeting/{name}")
   public String greeting(@PathParam("name") String name) {
     return helloService.politeGreeting(name);
+  }
+
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("/customers")
+  public List<Customer> getCustomers() {
+    return Customer.listAll();
   }
 }
